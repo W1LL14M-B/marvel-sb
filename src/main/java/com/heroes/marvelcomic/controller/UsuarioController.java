@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/api/usuarios")
 public class UsuarioController {
@@ -26,6 +28,11 @@ public ResponseEntity<UsuarioEntity> obtenerUsuarioPorId(@PathVariable Long id) 
             .map(ResponseEntity::ok)
             .orElse(ResponseEntity.notFound().build());
  }
+
+@GetMapping
+public ResponseEntity<?> obtenerTodosLosUsuarios() {
+    return ResponseEntity.ok(usuarioService.obtenerTodosLosUsuarios());
+}
 }
 
 
