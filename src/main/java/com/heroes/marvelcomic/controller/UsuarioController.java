@@ -5,11 +5,15 @@ import com.heroes.marvelcomic.entity.UsuarioEntity;
 import com.heroes.marvelcomic.service.UsuarioService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
-@CrossOrigin(origins = "http://localhost:5173")
+
+/* @CrossOrigin(origins = "http://localhost:5173")*/
+
+@CrossOrigin(origins = "http://localhost:5173", methods = {RequestMethod.GET, RequestMethod.POST})
 @RestController
 @RequestMapping("/api/usuarios")
 public class UsuarioController {
