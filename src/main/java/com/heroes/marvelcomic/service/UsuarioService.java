@@ -32,4 +32,8 @@ public class UsuarioService {
     public List<UsuarioEntity> obtenerTodosLosUsuarios() {
         return usuarioRepository.findAll();
     }
+    
+    public boolean validarCredenciales(String nombre, String identificacion) {
+        return usuarioRepository.existsByNombreAndIdentificacion(nombre, identificacion);
+    }
 }
